@@ -1,22 +1,30 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import Header from '@/components/Header';//
+import './globals.css';//
+import siteMetadata from '@/data/siteMetadata';//
 
-const inter = Inter({ subsets: ['latin'] })
+import { Inter } from 'next/font/google';//
+import Provider from '@/components/Provider';//
 
-export const metadata: Metadata = {
-  title: 'BNM Travel',
-  description: 'BNM Travel app',
-}
+const inter = Inter({ subsets: ['latin'] });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export const metadata = {
+  title: siteMetadata.title,
+  description: siteMetadata.description,
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang='en'>
+      <body className={inter.className}>
+        <div className='mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0'>
+          <div className='flex h-screen flex-col justify-between'>
+            <Provider>
+              <Header />
+              <main className='mb-auto'>{children}</main>
+            </Provider>
+          </div>
+        </div>
+      </body>
     </html>
-  )
+  );
 }
