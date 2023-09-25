@@ -1,5 +1,5 @@
-import { Prisma } from '@prisma/client';
-import prisma from '.';
+import { Prisma } from "@prisma/client";
+import prisma from ".";
 
 export async function getPosts(args: Prisma.PostFindManyArgs) {
   try {

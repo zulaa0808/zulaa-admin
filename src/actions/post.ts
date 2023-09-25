@@ -1,7 +1,7 @@
-'use server';
+"use server";
 
-import { createPost, updatePost, deletePost } from '@/lib/prisma/posts';
-import { Prisma } from '@prisma/client';
+import { createPost, updatePost, deletePost } from "@/lib/prisma/posts";
+import { Prisma } from "@prisma/client";
 
 export const addPost = async (post: Prisma.PostCreateInput) => {
   return createPost(post);

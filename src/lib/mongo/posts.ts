@@ -1,5 +1,5 @@
 // @ts-ignore
-import clientPromise from '@/lib/mongo/client';
+import clientPromise from "@/lib/mongo/client";
 
 let client: any;
 let db: any;
@@ -10,9 +10,9 @@ async function init() {
   try {
     client = await clientPromise;
     db = await client.db();
-    posts = await db.collection('posts');
+    posts = await db.collection("posts");
   } catch (error) {
-    throw new Error('Failed to connect to the database.');
+    throw new Error("Failed to connect to the database.");
   }
 }
 

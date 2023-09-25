@@ -1,4 +1,4 @@
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const useUpdateSearchParams = (params: { key: string; value: string }[]) => {
   const router = useRouter();
@@ -11,7 +11,7 @@ const useUpdateSearchParams = (params: { key: string; value: string }[]) => {
 
   const search = current.toString();
 
-  const query = search ? `?${search}` : '';
+  const query = search ? `?${search}` : "";
 
   router.push(`${pathname}${query}`);
 };

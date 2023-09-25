@@ -1,7 +1,7 @@
-import { FunctionComponent } from 'react';
-import Author from '@/components/Author';
-import { getServerSession } from 'next-auth';
-import { nextOptions } from '@/lib/auth';
+import { FunctionComponent } from "react";
+import Author from "@/components/Author";
+import { getServerSession } from "next-auth";
+import { nextOptions } from "@/lib/auth";
 
 interface PageProps {}
 

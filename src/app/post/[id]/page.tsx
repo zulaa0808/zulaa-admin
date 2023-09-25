@@ -1,8 +1,8 @@
-import { FunctionComponent } from 'react';
-import { notFound } from 'next/navigation';
-import ReactMarkdown from 'react-markdown';
-import { getPostById, getPosts } from '@/lib/prisma/posts';
-import Comment from '@/components/post/Comment';
+import { FunctionComponent } from "react";
+import { notFound } from "next/navigation";
+import ReactMarkdown from "react-markdown";
+import { getPostById, getPosts } from "@/lib/prisma/posts";
+import Comment from "@/components/post/Comment";
 
 interface PageProps {
   params: {
@@ -10,7 +10,11 @@ interface PageProps {
   };
 }
 
-export async function generateMetadata({ params: { id } }: { params: { id: string } }) {
+export async function generateMetadata({
+  params: { id },
+}: {
+  params: { id: string };
+}) {
   const { post } = await getPostById(id);
 
   return {
@@ -40,11 +44,10 @@ const Page: FunctionComponent<PageProps> = async ({ params: { id } }) => {
 
   return (
     <>
-      <h1 className='text-2xl uppercase pb-2'>{post.title}</h1>
+      <h1 className="text-2xl uppercase pb-2">{post.title}</h1>
       <article>
         <ReactMarkdown>{post.body}</ReactMarkdown>
       </article>
-      
       <Comment />
     </>
   );

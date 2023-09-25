@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 type Props = {
   totalPages: number;
@@ -10,29 +10,43 @@ export default function Pagination({ totalPages, currentPage }: Props) {
   const nextPage = currentPage + 1 <= totalPages;
 
   return (
-    <div className='space-y-2 pt-6 pb-8 md:space-y-5'>
-      <nav className='flex justify-between'>
+    <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+      <nav className="flex justify-between">
         {!prevPage && (
-          <button rel='previous' className='cursor-auto disabled:opacity-50' disabled={!prevPage}>
+          <button
+            rel="previous"
+            className="cursor-auto disabled:opacity-50"
+            disabled={!prevPage}
+          >
             Previous
           </button>
         )}
         {prevPage && (
-          <Link href={currentPage - 1 === 1 ? `/posts/` : `/posts?page=${currentPage - 1}`}>
-            <button rel='previous'>Previous</button>
+          <Link
+            href={
+              currentPage - 1 === 1
+                ? `/posts/`
+                : `/posts?page=${currentPage - 1}`
+            }
+          >
+            <button rel="previous">Previous</button>
           </Link>
         )}
         <span>
           {currentPage} of {totalPages}
         </span>
         {!nextPage && (
-          <button rel='next' className='cursor-auto disabled:opacity-50' disabled={!nextPage}>
+          <button
+            rel="next"
+            className="cursor-auto disabled:opacity-50"
+            disabled={!nextPage}
+          >
             Next
           </button>
         )}
         {nextPage && (
           <Link href={`/posts?page=${currentPage + 1}`}>
-            <button rel='next'>Next</button>
+            <button rel="next">Next</button>
           </Link>
         )}
       </nav>

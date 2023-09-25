@@ -1,6 +1,6 @@
-import Form from '@/components/post/Form';
-import { getPostById } from '@/lib/prisma/posts';
-import { FunctionComponent } from 'react';
+import Form from "@/components/post/Form";
+import { getPostById } from "@/lib/prisma/posts";
+import { FunctionComponent } from "react";
 
 interface EditProps {
   params: {

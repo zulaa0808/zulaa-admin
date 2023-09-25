@@ -1,5 +1,5 @@
-import Form from '@/components/post/Form';
-import { FunctionComponent } from 'react';
+import Form from "@/components/post/Form";
+import { FunctionComponent } from "react";
 
 interface CreateProps {}
 
